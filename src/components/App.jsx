@@ -10,7 +10,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      new project
+      biba and boba
     </div>
   );
 };
