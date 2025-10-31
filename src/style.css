@@ -1,0 +1,365 @@
+:root {
+  --bg1: #ff9a9e;
+  --bg2: #fad0c4;
+  --accent: #ff2d95;
+  --text-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+  --glass: rgba(255, 255, 255, 0.12);
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: radial-gradient(
+      ellipse at 10% 10%,
+      rgba(255, 255, 255, 0.06),
+      transparent 10%
+    ),
+    linear-gradient(120deg, var(--bg1), var(--bg2));
+}
+
+.stage {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Сердце */
+.heart {
+  width: 220px;
+  height: 200px;
+  position: relative;
+  animation: pulse 1.25s ease-in-out infinite;
+  filter: drop-shadow(0 12px 30px rgba(255, 45, 149, 0.18));
+  cursor: pointer;
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 190px;
+  background: var(--accent);
+  border-radius: 60px 60px 0 0;
+  top: 0;
+}
+
+.heart:before {
+  left: 120px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.98);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(0.98);
+  }
+}
+
+/* Фразы */
+.messages {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.msg {
+  position: absolute;
+  font-weight: 700;
+  font-size: clamp(18px, 5vw, 48px); /* трохи менше */
+  white-space: nowrap;
+  opacity: 0.95;
+  text-shadow: var(--text-shadow);
+  mix-blend-mode: screen;
+  animation: float linear infinite;
+  animation-timing-function: ease-in-out; /* плавний рух */
+}
+
+.msg.small {
+  font-size: clamp(16px, 3.8vw, 36px);
+}
+
+.m1 {
+  left: -20%;
+  top: 12%;
+  animation-duration: 18s;
+  color: #fff;
+}
+.m2 {
+  left: 100%;
+  top: 28%;
+  animation-duration: 21s;
+  color: rgba(255, 255, 255, 0.95);
+}
+.m3 {
+  left: -30%;
+  top: 60%;
+  animation-duration: 19s;
+  color: rgba(255, 240, 245, 0.98);
+}
+.m4 {
+  left: 100%;
+  top: 75%;
+  animation-duration: 24s;
+  color: rgba(255, 245, 247, 0.96);
+}
+.m5 {
+  left: -25%;
+  top: 40%;
+  animation-duration: 22s;
+  color: #fff8f8;
+}
+.m6 {
+  left: 100%;
+  top: 15%;
+  animation-duration: 25s;
+  color: #fff;
+}
+.m7 {
+  left: -20%;
+  top: 85%;
+  animation-duration: 23s;
+  color: #fff;
+}
+.m8 {
+  left: 100%;
+  top: 50%;
+  animation-duration: 20s;
+  color: #fff;
+}
+.m9 {
+  left: -25%;
+  top: 70%;
+  animation-duration: 26s;
+  color: #fff;
+}
+.m10 {
+  left: 100%;
+  top: 35%;
+  animation-duration: 28s;
+  color: #fff;
+}
+.m11 {
+  left: -25%;
+  top: 25%;
+  animation-duration: 24s;
+  color: #fff;
+}
+.m12 {
+  left: 100%;
+  top: 65%;
+  animation-duration: 27s;
+  color: #fff;
+}
+.m13 {
+  left: -20%;
+  top: 55%;
+  animation-duration: 25s;
+  color: #fff;
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-120vw);
+  }
+}
+
+/* Остальное */
+.caption {
+  margin-top: 18px;
+  color: white;
+  font-size: 18px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03)
+  );
+  padding: 10px 18px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--text-shadow);
+}
+
+.controls {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 10px 12px;
+  border-radius: 999px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+/* Частицы */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  opacity: 0.9;
+  border-radius: 50%;
+}
+
+/* Финальные фразы */
+.final-msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  font-size: clamp(26px, 6vw, 60px);
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1.5s ease;
+}
+
+.final-msg.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.special-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  font-size: 40px;
+  color: #ff6fb5;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 2s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.special-text.show {
+  transform: translate(-50%, -50%) scale(1.2);
+  opacity: 1;
+}
+
+.special-text.hide {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 0;
+}
+
+.floating-text {
+  position: absolute;
+  color: #ffe0f3;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255, 170, 200, 0.9);
+  opacity: 0;
+  transform: scale(0.8);
+  animation: floatUp 4s ease-out forwards;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  user-select: none;
+}
+
+/* Анимация плавного подъёма и исчезновения */
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(2deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1.1) rotate(-2deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px) scale(1.2) rotate(0deg);
+  }
+}
+
+/* Клік-ефект зміни кольору */
+.heart.clicked:before,
+.heart.clicked:after {
+  background: #ffb6c1;
+  box-shadow: 0 0 30px 10px rgba(255, 182, 193, 0.5);
+  transition: all 0.4s ease;
+}
+
+.bubble {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255, 182, 193, 0.8);
+  pointer-events: none;
+  animation: bubbleUp 1.6s ease-out forwards;
+  mix-blend-mode: screen;
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translate(0, 0) scale(0.6);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(var(--x), var(--y)) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(var(--x2), var(--y2)) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Градієнт для серця при зміні кольору (за бажанням) */
+/* .heart:before,
+.heart:after {
+  background: linear-gradient(
+    135deg,
+    var(--heart-color1, #ff2d95),
+    var(--heart-color2, #ff66b3)
+  );
+  transition: background 1s ease;
+} */
