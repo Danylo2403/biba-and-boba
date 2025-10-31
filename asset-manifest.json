@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/biba-and-boba/static/css/main.7acaea2f.css",
-    "main.js": "/biba-and-boba/static/js/main.6fefdceb.js",
+    "main.css": "/biba-and-boba/static/css/main.c298f904.css",
+    "main.js": "/biba-and-boba/static/js/main.47298891.js",
     "index.html": "/biba-and-boba/index.html",
-    "main.7acaea2f.css.map": "/biba-and-boba/static/css/main.7acaea2f.css.map",
-    "main.6fefdceb.js.map": "/biba-and-boba/static/js/main.6fefdceb.js.map"
+    "main.c298f904.css.map": "/biba-and-boba/static/css/main.c298f904.css.map",
+    "main.47298891.js.map": "/biba-and-boba/static/js/main.47298891.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.6fefdceb.js"
+    "static/css/main.c298f904.css",
+    "static/js/main.47298891.js"
   ]
 }
