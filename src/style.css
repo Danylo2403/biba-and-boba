@@ -363,3 +363,106 @@ body {
   );
   transition: background 1s ease;
 } */
+
+/* --- 📱 ФІНАЛЬНА АДАПТАЦІЯ ДЛЯ МОБІЛЬНИХ ЕКРАНІВ --- */
+@media (max-width: 480px) {
+  html,
+  body {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: none; /* прибираємо масштабування, щоб серце не зникало */
+    text-align: center;
+  }
+
+  .heart {
+    width: 110px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .heart:before,
+  .heart:after {
+    width: 60px;
+    height: 90px;
+    border-radius: 35px 35px 0 0;
+  }
+
+  .caption {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin-top: 12px;
+  }
+
+  .msg {
+    font-size: clamp(10px, 3.5vw, 18px);
+  }
+
+  .msg.small {
+    font-size: clamp(9px, 3vw, 16px);
+  }
+
+  .messages {
+    overflow: hidden;
+  }
+
+  /* трохи змінюємо позиції текстів, щоб не накладалися */
+  .m1 {
+    top: 6%;
+  }
+  .m2 {
+    top: 18%;
+  }
+  .m3 {
+    top: 30%;
+  }
+  .m4 {
+    top: 42%;
+  }
+  .m5 {
+    top: 54%;
+  }
+  .m6 {
+    top: 66%;
+  }
+  .m7 {
+    top: 78%;
+  }
+
+  .final-msg {
+    font-size: clamp(16px, 6vw, 28px);
+  }
+
+  .special-text {
+    font-size: 22px;
+  }
+
+  .controls {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
